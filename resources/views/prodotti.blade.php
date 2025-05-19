@@ -8,7 +8,7 @@
     @foreach ($prodotti as $prodotto )
         <div class="col-12 col-md-6">
             <x-prodotti-card 
-                :prodotto = $prodotto>             
+                :prodotto = "$prodotto">             
             </x-prodotti-card>  
         </div>
     @endforeach

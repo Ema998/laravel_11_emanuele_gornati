@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Http\Requests\ProdottiRequest;
+use App\Http\Requests\ProdottiUpdateRequest;
 
 class ProdottiController extends Controller
 {
@@ -42,23 +43,32 @@ class ProdottiController extends Controller
     }
 
     public function show(Game $prodotto){
-        $prodotto = Game::find($prodotto);
-        return view('dettaglioProdotto', ['prodotto' => $prodotto]);
+        return view('dettaglioProdotto', compact('prodotto'));
     }
 
     public function destroy(Game $prodotto){
-        $prodotto = Game::find($prodotto);
         $prodotto->delete();
         return redirect()->route('prodotti')->with('message', 'Prodotto eliminato con successo!');
     }
 
     public function edit(Game $prodotto){
-        $prodotto = Game::find($prodotto);
-        return view('modificaProdotto', ['prodotto' => $prodotto]);
+        return view('modificaProdotto', compact('prodotto'));
     }
-    public function update(ProdottiRequest $request, $prodotto){
-        $prodotto = Game::find($prodotto);
-        $prodotto->update($request->validated());
+    public function update(ProdottiUpdateRequest $request, $prodotto){
+        $prodotto->update([
+            'nome' => $request->input('nome'),
+            'prezzo' => $request->input('prezzo'),
+            'descrizione' => $request->input('descrizione'),
+        ]);
+        if($request->file('img')){
+            $request->validate([
+                'img' => 'image',
+            ]);
+            $prodotto->update([
+            $prodotto->img = $request->file('img')->store('public/img')
+            ]);
+        }
+        $prodotto->save();
         return redirect()->route('prodotti')->with('message', 'Prodotto modificato con successo!');
     }
 }

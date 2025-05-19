@@ -12,10 +12,13 @@
                 <p><strong>Descrizione:</strong> {{ $prodotto['descrizione'] }}</p>
                 <p><strong>Prezzo:</strong> €{{ number_format($prodotto['prezzo'], 2) }}</p>
                 <p><strong>Categoria:</strong> {{ $prodotto['categoria'] }}</p>
-                <button class="btn btn-secondary">Modifica prodotto
-                    <a href="{{ route('') }}"></a>
-                </button>
-                <button class="btn btn-danger">Elimina prodotto</button>
             </div>
+        </div>
+        <div class="row">
+            <form action="{{ route('deleteProdotto', compact('prodotto')) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Elimina Prodotto</button>
+            </form>
         </div>
 </x-layout>
