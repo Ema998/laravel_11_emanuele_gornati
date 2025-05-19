@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Http\Requests\ProdottiRequest;
 use App\Http\Requests\ProdottiUpdateRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ProdottiController extends Controller
 {
@@ -31,7 +32,8 @@ class ProdottiController extends Controller
             'nome' => $nome,
             'prezzo' => $prezzo,
             'descrizione' => $descrizione,
-            'img' => $img
+            'img' => $img,
+            'user_id' => Auth::user()->id,
         ]);
 
         return redirect()->route('prodotti')->with('message', 'Prodotto aggiunto con successo!');

@@ -10,6 +10,12 @@ class Game extends Model
         'nome',
         'prezzo',
         'descrizione',
-        'img'
+        'img',
+        'user_id'
     ];
+
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
