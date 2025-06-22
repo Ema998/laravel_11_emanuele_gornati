@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center align-items-center">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{{ route('aggiungiProdotto/submit') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('aggiungiProdottoSubmit') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="nomeProdotto">Nome prodotto</label>
