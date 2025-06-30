@@ -16,6 +16,11 @@ class ProdottiController extends Controller
         $this->middleware('auth')->except('homepage');
     }
 
+    public function homepage () 
+    {
+        return view('homepage');
+    }
+
     public function store(ProdottiRequest $request)
     {
         $nome = $request->input('nome');
