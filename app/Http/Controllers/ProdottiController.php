@@ -71,8 +71,9 @@ class ProdottiController extends Controller
             $request->validate([
                 'img' => 'image',
             ]);
+           $imgPath = $request->file('img')->store('public/img');
             $prodotto->update([
-            $prodotto->img = $request->file('img')->store('public/img')
+                'img' => $imgPath
             ]);
         }
         $prodotto->save();
