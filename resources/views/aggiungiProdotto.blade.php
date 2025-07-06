@@ -13,7 +13,7 @@
                     </div>
                     <div class="form-group">
                         <label for="prezzoProdotto">Prezzo</label>
-                        <input type="text" name="prezzo" value="{{ old('prezzo') }}" class="form-control" id="prezzoProdotto">
+                        <input type="number" name="prezzo" value="{{ old('prezzo') }}" class="form-control" id="prezzoProdotto">
                     </div>
                     <div class="form-group">
                         <label for="descrizioneProdotto">Descrizione</label>

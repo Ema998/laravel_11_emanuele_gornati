@@ -7,9 +7,7 @@
     </button>
     @foreach ($prodotti as $prodotto )
         <div class="col-12 col-md-6">
-            <x-prodotti-card 
-                :prodotto = "$prodotto">             
-            </x-prodotti-card>  
+            <x-prodottiCard :prodotto="$prodotto" />  
         </div>
     @endforeach
    <x-message/>
