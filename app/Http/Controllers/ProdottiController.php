@@ -10,12 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ProdottiController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth')->except('homepage');
-    }
-
     public function homepage () 
     {
         return view('homepage');
