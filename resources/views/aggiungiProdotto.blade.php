@@ -9,7 +9,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="nomeProdotto">Nome prodotto</label>
-                        <input type="text" name="nomeProdotto" value="{{ old('nome') }}" class="form-control" id="nomeProdotto">
+                        <input type="text" name="nome" value="{{ old('nome') }}" class="form-control" id="nomeProdotto">
                     </div>
                     <div class="form-group">
                         <label for="prezzoProdotto">Prezzo</label>
