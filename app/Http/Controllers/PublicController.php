@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class PublicController extends Controller
 {
     public function prodotti () {
-        return view('prodotti');
+        $prodotti = Game::all(); 
+        return view('prodotti' compact('prodotti'));
     }
 
     public function aggiungiProdotto () {
