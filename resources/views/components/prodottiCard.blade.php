@@ -6,6 +6,6 @@
     <h3 class="card-title">{{$prodotto->prezzo}}</h3>
     <p class="card-text">{{$prodotto->descrizione}}</p>
     <a href="{{ route('dettaglioProdotto', compact('prodotto')) }}" class="btn btn-primary my-4">Scopri di più</a>
-    <a href="{{ route('modificaoProdotto', compact('prodotto')) }}" class="btn btn-secondary">Modifica</a>  
+    <a href="{{ route('modificaProdotto', compact('prodotto')) }}" class="btn btn-secondary">Modifica</a>  
   </div>
 </div>

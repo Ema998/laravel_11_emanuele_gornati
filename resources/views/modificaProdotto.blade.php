@@ -1,6 +1,6 @@
 <x-layout>
     <x-header>
-        <h1 class="text-center">AGGIUGNI UN PRODOTTO</h1>
+        <h1 class="text-center">MODIFICA UN PRODOTTO</h1>
     </x-header>
     <div class="container-fluid">
         <div class="row justify-content-center align-items-center">
@@ -11,7 +11,7 @@
                     @method('PUT')
                     <div class="form-group">
                         <label for="nomeProdotto">Nome prodotto</label>
-                        <input type="text" name="nomeProdotto" value="{{$prodotto->nome}}" class="form-control" id="nomeProdotto">
+                        <input type="text" name="nome" value="{{$prodotto->nome}}" class="form-control" id="nomeProdotto">
                     </div>
                     <div class="form-group">
                         <label for="prezzoProdotto">Prezzo</label>
@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <label for="descrizioneProdotto">Descrizione</label>
-                        <textarea class="form-control" name="descrizione" id="descrizioneProdotto" rows="3">{{ $prodotto->descrizione) }}</textarea>
+                        <textarea class="form-control" name="descrizione" id="descrizioneProdotto" rows="3">{{ $prodotto->descrizione }}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="imgProdotto">Inserisci un'immagine</label>

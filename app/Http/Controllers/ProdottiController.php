@@ -55,7 +55,7 @@ class ProdottiController extends Controller
     public function edit(Game $prodotto){
         return view('modificaProdotto', compact('prodotto'));
     }
-    public function update(ProdottiUpdateRequest $request, $prodotto){
+    public function update(ProdottiUpdateRequest $request, Game $prodotto){
         $prodotto->update([
             'nome' => $request->input('nome'),
             'prezzo' => $request->input('prezzo'),
@@ -70,7 +70,6 @@ class ProdottiController extends Controller
                 'img' => $imgPath
             ]);
         }
-        $prodotto->save();
         return redirect()->route('prodotti')->with('message', 'Prodotto modificato con successo!');
     }
 }
