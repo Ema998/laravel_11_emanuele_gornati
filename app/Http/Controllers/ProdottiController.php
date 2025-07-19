@@ -23,9 +23,8 @@ class ProdottiController extends Controller
         $img = null;
 
         if($request->file('img')){
-            $img = $request->file('img')->store('public/img');
+            $img = $request->file('img')->store('img', 'public');
         }
-        
         
         $prodotto = Game::create([
             'nome' => $nome,
@@ -65,7 +64,7 @@ class ProdottiController extends Controller
             $request->validate([
                 'img' => 'image',
             ]);
-           $imgPath = $request->file('img')->store('public/img');
+           $imgPath = $request->file('img')->store('img', 'public');
             $prodotto->update([
                 'img' => $imgPath
             ]);
